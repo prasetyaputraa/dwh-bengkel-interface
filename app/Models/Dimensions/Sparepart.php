@@ -8,5 +8,4 @@ class Sparepart extends Model
 {
     protected $table   = 'dim_sparepart';
     public $timestamps = false;
-    //
 }

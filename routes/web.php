@@ -15,4 +15,8 @@
 //    return view('welcome');
 //});
 
-Route::get('/', 'Facts\PenjualanSparepart@loadAll');
+Route::get('/PenjualanSparepart/ByItem/{year}', 'Analytics\PenjualanSparepartController@byItemInYear');
+
+Route::get('/PenjualanSparepart/ByItem/{year}/Monthly', 'Analytics\PenjualanSparepartController@byItemInYearMonthly');
+
+Route::get('/PenjualanSparepart/ByItem/{year}/Month/{month}', 'Analytics\PenjualanSparepartController@byItemInYearInMonth');

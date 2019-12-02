@@ -8,5 +8,4 @@ class Pegawai extends Model
 {
     protected $table   = 'dim_pegawai';
     public $timestamps = false;
-    //
 }
