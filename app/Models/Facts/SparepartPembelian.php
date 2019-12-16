@@ -7,5 +7,4 @@ use Illuminate\Database\Eloquent\Model;
 class SparepartPembelian extends Model
 {
     protected $table = 'fact_pembelian_sparepart';
-    //
 }

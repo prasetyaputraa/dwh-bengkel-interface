@@ -12,6 +12,8 @@ use Carbon\Carbon;
 class FactsBuilder extends Controller
 {
     use PenjualanSparepart;
+    use PembelianSparepart;
+    use PenjualanJasa;
 
     public function getNewRecordsPenjualanSparepart() {
         $currentDateTime = Carbon::now();

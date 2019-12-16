@@ -24,7 +24,7 @@ use App\Models\ExtractionHistory;
 
 trait PenjualanSparepart
 {
-    public function loadAll() {
+    public function loadSparepartPenjualanAll() {
         $results = DB::connection('mysql-transaction')
             ->table('sparepart_transactions')
             ->join('transactions', 'sparepart_transactions.transaction_id', '=', 'transactions.id')
@@ -48,7 +48,7 @@ trait PenjualanSparepart
         return true;
     }
 
-    public function getNewTransactionsSparepart() {
+    public function getNewTransactionsSparepartPenjualan() {
         $modelExtractHist = new ExtractionHistory();
 
         $lastExtractDate = $modelExtractHist->where('extraction_type', '=', 'Facts')
@@ -83,7 +83,7 @@ trait PenjualanSparepart
         return true;
     }
 
-    public function loadAllMonthly() {
+    public function loadSparepartPenjualanAllMonthly() {
         $modelSpPenjualan        = new SparepartPenjualan();
         $modelSpPenjualanBulanan = new SparepartPenjualanBulanan();
 
@@ -108,7 +108,7 @@ trait PenjualanSparepart
         return true;
     }
 
-    public function getNewTransactionsSparepartMonthly() {
+    public function getNewTransactionsSparepartPenjualanMonthly() {
         $modelExtractHist = new ExtractionHistory();
 
         $lastExtractDate = $modelExtractHist->where('extraction_type', '=', 'Facts')

@@ -18,6 +18,8 @@ class PenjualanSparepartController extends Controller
     }
 
     public function byItemInYear($year) {
+        $pageTitle = "Penjualan Sparepart pada tahun {$year}";
+
         $results = DB::table('fact_penjualan_sparepart_bulanan as fact')
             ->groupBy('id_sparepart')
             ->where('fact.tahun', '=', $year)
@@ -29,7 +31,9 @@ class PenjualanSparepartController extends Controller
             )
             ->get();
 
-        dd($results->toArray());
+        $data = json_encode($results->toArray());
+
+        return view('analytics/pie-chart', compact('data', 'pageTitle'));
     }
 
     //month by month
